@@ -75,6 +75,22 @@ class MyGUI:
         self.kalimatPenutup = ttk.Entry(self.root, width = 70)
         self.kalimatPenutup.pack()
 
+        #create input Kata kunci
+        ttk.Label(self.root, text="Kata Kunci", font = self.heading2).pack()
+        ttk.Label(self.root, text = "Masukkan Kata Kunci", font = self.body).pack()
+        kataKunciInfo = "Contoh: Semangat, impian, sukses, bangkit, berani, jangan menyerah"
+        ttk.Label(self.root, text=kataKunciInfo,justify="center", font=self.caption).pack()
+        self.kataKunci = ttk.Entry(self.root, width = 70)
+        self.kataKunci.pack()
+        
+        #create input Visualisasi yang dibayangkan
+        ttk.Label(self.root, text="Visualisasi", font = self.heading2).pack()
+        ttk.Label(self.root, text = "Masukkan Visualisasi", font = self.body).pack()
+        visualisasiInfo = "Deskripsikan adegan atau gambar yang mendukung narasi.\nContoh: Seseorang yang mendaki gunung, orang yang tersenyum setelah berhasil"
+        ttk.Label(self.root, text=visualisasiInfo,justify="center", font=self.caption).pack()
+        self.visualisasi = ttk.Entry(self.root, width = 70)
+        self.visualisasi.pack()
+
 
 
         self.submitBtn = ttk.Button(self.root, text="Generate", command=self.submitData).pack(pady=10)
@@ -89,6 +105,8 @@ class MyGUI:
             "poinKunci" : [self.poinKunci1.get(),self.poinKunci2.get(),self.poinKunci3.get()],
             "kalimatPembuka" : self.kalimatPembuka.get(),
             "kalimatPenutup" : self.kalimatPenutup.get(),
+            "kataKunci" : self.kataKunci.get(),
+            "visualisasi" : self.visualisasi.get()
         }
         print(data)
         
