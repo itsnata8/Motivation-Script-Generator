@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import backend
 
 class MyGUI:
     def __init__(self):
@@ -114,12 +115,13 @@ class MyGUI:
             "temaUtama" : self.temaUtamaValue.get(),
             "targetAudiens" : self.targetAudiens.get(),
             "poinKunci" : [self.poinKunci1.get(),self.poinKunci2.get(),self.poinKunci3.get()],
+            "gayaBahasa" : self.gayaBahasa.get(),
             "kalimatPembuka" : self.kalimatPembuka.get(),
             "kalimatPenutup" : self.kalimatPenutup.get(),
             "kataKunci" : self.kataKunci.get(),
             "visualisasi" : self.visualisasi.get()
         }
-        print(data)
+        backend.Backend(data);
         
 
 MyGUI()                       
