@@ -122,6 +122,13 @@ class MyGUI:
             "visualisasi" : self.visualisasi.get()
         }
         backend.Backend(data);
+
+    def open_secondary_window(self):
+        # Create secondary (or popup) window.
+        secondary_window = Toplevel()
+        secondary_window.title("Secondary Window")
+        secondary_window.config(width=300, height=200)
         
+  
 
 MyGUI()                       
