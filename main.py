@@ -121,14 +121,28 @@ class MyGUI:
             "kataKunci" : self.kataKunci.get(),
             "visualisasi" : self.visualisasi.get()
         }
-        backend.Backend(data);
+        content = backend.Backend().generate(data);
+        if content :
+            self.open_secondary_window(content)
+        else:
+            content = "Error"
 
-    def open_secondary_window(self):
+    def open_secondary_window(self, content):
         # Create secondary (or popup) window.
         secondary_window = Toplevel()
         secondary_window.title("Secondary Window")
-        secondary_window.config(width=300, height=200)
         
+
+        # Create a Label widget to display the content.
+        content_label = Label(secondary_window, text=content)
+        content_label.pack(padx=10, pady=10)
+        
+        def copy_text():
+            secondary_window.clipboard_clear()
+            secondary_window.clipboard_append(content)
+
+        copy_button = Button(secondary_window, text="Copy to Clipboard", command=copy_text)
+        copy_button.pack()
   
 
 MyGUI()                       

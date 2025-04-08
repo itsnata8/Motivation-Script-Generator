@@ -3,8 +3,7 @@ import os
 from dotenv import load_dotenv
 
 class Backend:
-    def __init__(self, data):
-        print(data)
+    def generate(self, data):
         content = f"""
         Buat naskah narasi motivasi berdurasi 30 detik untuk video dengan ketentuan berikut:
 
@@ -20,7 +19,7 @@ class Backend:
         Kata-kata Kunci: {data["kataKunci"]}
         Visualisasi yang Dibayangkan: {data["visualisasi"]}
         """
-        print(content)
+        return content
         # load_dotenv()
         # API = os.getenv("API_KEY")
         # client = genai.Client(api_key=API)
@@ -31,3 +30,4 @@ class Backend:
         # )
 
         # print(response.text)
+        
